@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Crop Explorer - AgriSense</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <!-- Hidden checkbox that remembers if the mobile menu is open.
+         Pure CSS - no JavaScript involved. -->
+    <input type="checkbox" id="navToggle" class="navbar-toggle-checkbox">
+
+    <div class="container navbar-inner">
+
+      <a href="index.html" class="navbar-logo">
+        <div class="navbar-logo-box">A</div>
+        <span class="navbar-logo-text">Agri<span>Sense</span></span>
+      </a>
+
+      <nav class="navbar-menu">
+        <a href="index.html" class="navbar-link">Home</a>
+        <a href="crops.html" class="navbar-link active">Crop Explorer</a>
+        <a href="markets.html" class="navbar-link">Market Finder</a>
+        <a href="index.html" class="navbar-link">About</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <button class="btn btn-primary">Get Started</button>
+      </div>
+
+      <!-- Clicking this label checks/unchecks #navToggle above -->
+      <label for="navToggle" class="navbar-toggle" aria-label="Toggle menu">
+        <span class="navbar-toggle-bar"></span>
+        <span class="navbar-toggle-bar"></span>
+        <span class="navbar-toggle-bar"></span>
+      </label>
+    </div>
+
+    <div class="navbar-mobile-menu-wrap">
+      <div class="container">
+        <nav class="navbar-mobile-menu">
+          <a href="index.html" class="navbar-mobile-link">Home</a>
+          <a href="crops.html" class="navbar-mobile-link">Crop Explorer</a>
+          <a href="markets.html" class="navbar-mobile-link">Market Finder</a>
+          <a href="index.html" class="navbar-mobile-link">About</a>
+          <button class="btn btn-primary btn-full-width">Get Started</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ PAGE HEADER (with banner image) ============ -->
+  <section class="page-header page-header-crops">
+    <div class="container">
+      <h1>Crop Explorer</h1>
+      <p>Browse all crops with detailed market intelligence</p>
+    </div>
+  </section>
+
+  <!-- ============ FILTERS + CROP GRID ============ -->
+  <!-- Note: this is a plain HTML/CSS page, so the search box and
+       filters below are for visual layout only. Making them actually
+       filter the crops would need JavaScript, which this version
+       does not use. -->
+  <section class="container page-content">
+
+    <aside class="filter-sidebar">
+
+      <div class="filter-group">
+        <h3 class="filter-title">Search Crops</h3>
+        <input type="text" class="search-input" placeholder="Search by name...">
+      </div>
+
+      <div class="filter-group">
+        <h3 class="filter-title">Season</h3>
+        <label class="radio-option">
+          <input type="radio" name="season" checked>
+          <span>All Seasons</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="season">
+          <span>Kharif</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="season">
+          <span>Rabi</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="season">
+          <span>Summer</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="season">
+          <span>Annual</span>
+        </label>
+      </div>
+
+      <div class="filter-group">
+        <h3 class="filter-title">Market Demand</h3>
+        <label class="radio-option">
+          <input type="radio" name="demand" checked>
+          <span>All Demands</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="demand">
+          <span>Low</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="demand">
+          <span>Moderate</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="demand">
+          <span>High</span>
+        </label>
+        <label class="radio-option">
+          <input type="radio" name="demand">
+          <span>Very High</span>
+        </label>
+      </div>
+
+    </aside>
+
+    <div class="results-area">
+
+      <div class="results-info-row">
+        <p>Showing <strong>12</strong> crops</p>
+      </div>
+
+      <div class="crops-list">
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🌾</div>
+            <div>
+              <h3 class="crop-name">Wheat</h3>
+              <p class="crop-season">Kharif / Rabi</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹2400/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:48%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 12%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">Moderate</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🍚</div>
+            <div>
+              <h3 class="crop-name">Rice</h3>
+              <p class="crop-season">Kharif</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹3200/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:32%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 8%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">Very High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">☁️</div>
+            <div>
+              <h3 class="crop-name">Cotton</h3>
+              <p class="crop-season">Kharif</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹5800/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:20%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-down">↓ -5%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">Moderate</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🍂</div>
+            <div>
+              <h3 class="crop-name">Sugarcane</h3>
+              <p class="crop-season">Annual</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹380/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:60%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 15%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">Moderate</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🌽</div>
+            <div>
+              <h3 class="crop-name">Corn</h3>
+              <p class="crop-season">Kharif / Rabi</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹1800/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:40%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 10%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">Moderate</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🫘</div>
+            <div>
+              <h3 class="crop-name">Soybean</h3>
+              <p class="crop-season">Kharif</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹4500/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:72%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 18%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">Very High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">Moderate</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🍅</div>
+            <div>
+              <h3 class="crop-name">Tomato</h3>
+              <p class="crop-season">Rabi / Summer</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹2000/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:32%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-down">↓ -8%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🧅</div>
+            <div>
+              <h3 class="crop-name">Onion</h3>
+              <p class="crop-season">Rabi</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹2800/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:48%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 12%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">Very High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🥔</div>
+            <div>
+              <h3 class="crop-name">Potato</h3>
+              <p class="crop-season">Rabi</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹1600/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:24%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 6%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">Very High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🥜</div>
+            <div>
+              <h3 class="crop-name">Groundnut</h3>
+              <p class="crop-season">Kharif / Rabi</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹5200/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:56%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 14%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">Moderate</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">💛</div>
+            <div>
+              <h3 class="crop-name">Mustard</h3>
+              <p class="crop-season">Rabi</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹5600/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:80%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 20%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">Low</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🫘</div>
+            <div>
+              <h3 class="crop-name">Pulses (Gram)</h3>
+              <p class="crop-season">Rabi</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹5000/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:20%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 5%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">Very High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">Moderate</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AgriSense. MCA Project. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

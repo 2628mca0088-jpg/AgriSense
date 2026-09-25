@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriSense - Smart Agricultural Intelligence</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <!-- Hidden checkbox that remembers if the mobile menu is open.
+         Pure CSS - no JavaScript involved. -->
+    <input type="checkbox" id="navToggle" class="navbar-toggle-checkbox">
+
+    <div class="container navbar-inner">
+
+      <a href="index.html" class="navbar-logo">
+        <div class="navbar-logo-box">A</div>
+        <span class="navbar-logo-text">Agri<span>Sense</span></span>
+      </a>
+
+      <nav class="navbar-menu">
+        <a href="index.html" class="navbar-link active">Home</a>
+        <a href="crops.html" class="navbar-link">Crop Explorer</a>
+        <a href="markets.html" class="navbar-link">Market Finder</a>
+        <a href="index.html" class="navbar-link">About</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <button class="btn btn-primary">Get Started</button>
+      </div>
+
+      <!-- Clicking this label checks/unchecks #navToggle above -->
+      <label for="navToggle" class="navbar-toggle" aria-label="Toggle menu">
+        <span class="navbar-toggle-bar"></span>
+        <span class="navbar-toggle-bar"></span>
+        <span class="navbar-toggle-bar"></span>
+      </label>
+    </div>
+
+    <div class="navbar-mobile-menu-wrap">
+      <div class="container">
+        <nav class="navbar-mobile-menu">
+          <a href="index.html" class="navbar-mobile-link">Home</a>
+          <a href="crops.html" class="navbar-mobile-link">Crop Explorer</a>
+          <a href="markets.html" class="navbar-mobile-link">Market Finder</a>
+          <a href="index.html" class="navbar-mobile-link">About</a>
+          <button class="btn btn-primary btn-full-width">Get Started</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO SECTION ============ -->
+  <section class="hero">
+    <div class="container hero-inner">
+
+      <div class="hero-content">
+        <p class="hero-tag">Welcome to AgriSense</p>
+        <h1 class="hero-title">Smart Agricultural Intelligence</h1>
+        <p class="hero-text">
+          Make informed crop planning and selling decisions with comprehensive
+          market intelligence, price trends, demand indicators, and risk
+          analysis — all in one platform.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="crops.html" class="btn btn-primary">Explore Crops</a>
+          <a href="markets.html" class="btn btn-outline">Find Markets</a>
+        </div>
+
+        <div class="hero-stats">
+          <div>
+            <p class="hero-stat-number">500+</p>
+            <p class="hero-stat-label">Crops Tracked</p>
+          </div>
+          <div>
+            <p class="hero-stat-number">2K+</p>
+            <p class="hero-stat-label">Markets</p>
+          </div>
+          <div>
+            <p class="hero-stat-number">10K+</p>
+            <p class="hero-stat-label">Farmers</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banner image -->
+      <div class="hero-image-box">
+        <img src="images/banner-home.jpg" alt="Green farm field illustration">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FEATURES SECTION ============ -->
+  <section class="section section-light">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Powerful Features for Smart Farming</h2>
+        <p>Make better decisions with comprehensive agricultural market intelligence and analytics</p>
+      </div>
+
+      <div class="features-list">
+        <div class="feature-card">
+          <div class="feature-icon">🌾</div>
+          <h3 class="feature-title">Crop Intelligence</h3>
+          <p>Comprehensive data on price trends, demand, supply pressure, and risk indicators for 500+ crops.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3 class="feature-title">Market Comparison</h3>
+          <p>Compare multiple markets based on price, distance, transportation cost, and net return.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3 class="feature-title">Net Return Calculator</h3>
+          <p>Estimate your actual profit after production and selling costs, not just market prices.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔮</div>
+          <h3 class="feature-title">What-If Simulator</h3>
+          <p>Run scenarios and evaluate different crop choices before making investment decisions.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📋</div>
+          <h3 class="feature-title">Farming Plans</h3>
+          <p>Organize your crop allocation and track expected returns across your farmland.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3 class="feature-title">Price History</h3>
+          <p>Historical price data and trends to identify patterns and seasonal opportunities.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FEATURED CROPS SECTION ============ -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Featured Crops</h2>
+        <p>Explore trending crops with real-time price data and market analysis</p>
+      </div>
+
+      <div class="crops-list">
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🌾</div>
+            <div>
+              <h3 class="crop-name">Wheat</h3>
+              <p class="crop-season">Kharif / Rabi</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹2400/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:48%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 12%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">Moderate</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🍚</div>
+            <div>
+              <h3 class="crop-name">Rice</h3>
+              <p class="crop-season">Kharif</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹3200/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:32%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 8%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">Very High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">☁️</div>
+            <div>
+              <h3 class="crop-name">Cotton</h3>
+              <p class="crop-season">Kharif</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹5800/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:20%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-down">↓ -5%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">Moderate</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🍂</div>
+            <div>
+              <h3 class="crop-name">Sugarcane</h3>
+              <p class="crop-season">Annual</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹380/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:60%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 15%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">Moderate</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🌽</div>
+            <div>
+              <h3 class="crop-name">Corn</h3>
+              <p class="crop-season">Kharif / Rabi</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹1800/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:40%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 10%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">Moderate</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+
+        <div class="crop-card">
+          <div class="crop-card-top">
+            <div class="crop-icon-box">🫘</div>
+            <div>
+              <h3 class="crop-name">Soybean</h3>
+              <p class="crop-season">Kharif</p>
+            </div>
+          </div>
+
+          <div class="crop-price-row">
+            <span class="crop-price-label">Current Price</span>
+            <span class="crop-price-value">₹4500/kg</span>
+          </div>
+
+          <div class="crop-progress-track">
+            <div class="crop-progress-fill" style="width:72%;"></div>
+          </div>
+
+          <div class="crop-trend-row">
+            <span class="crop-trend-up">↑ 18%</span>
+            <span>Last 30 days</span>
+          </div>
+
+          <div class="crop-extra-row">
+            <div>
+              <p class="crop-extra-label">Demand</p>
+              <p class="crop-extra-value">Very High</p>
+            </div>
+            <div>
+              <p class="crop-extra-label">Supply</p>
+              <p class="crop-extra-value">Moderate</p>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-primary btn-full-width">View Details</a>
+        </div>
+      </div>
+
+      <div class="section-heading" style="margin-top: 32px;">
+        <a href="crops.html" class="btn btn-secondary">View All Crops</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ CALL TO ACTION SECTION ============ -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to Make Smarter Farming Decisions?</h2>
+      <p>Join thousands of farmers using AgriSense for better crop planning and market opportunities.</p>
+      <div class="cta-buttons">
+        <button class="btn btn-primary">Get Started Free</button>
+        <button class="btn btn-outline">Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TESTIMONIALS SECTION ============ -->
+  <section class="section section-light">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Farmers Trust AgriSense</h2>
+      </div>
+
+      <div class="testimonials-list">
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"AgriSense helped me increase my yield by 25% by making informed crop decisions based on market data."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👨</div>
+            <div>
+              <p class="testimonial-name">Farmer 1</p>
+              <p class="testimonial-location">Haryana Region</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"AgriSense helped me increase my yield by 25% by making informed crop decisions based on market data."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👨</div>
+            <div>
+              <p class="testimonial-name">Farmer 2</p>
+              <p class="testimonial-location">Haryana Region</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">★★★★★</div>
+          <p class="testimonial-text">"AgriSense helped me increase my yield by 25% by making informed crop decisions based on market data."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">👨</div>
+            <div>
+              <p class="testimonial-name">Farmer 3</p>
+              <p class="testimonial-location">Haryana Region</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-top">
+        <div class="footer-column">
+          <div class="footer-brand">
+            <div class="navbar-logo-box">A</div>
+            <span class="footer-brand-text">AgriSense</span>
+          </div>
+          <p>Smart Agricultural Market Intelligence and Decision Support Platform</p>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-heading">Product</h4>
+          <ul>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Updates</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-heading">Company</h4>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4 class="footer-heading">Legal</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">License</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 AgriSense. MCA Project. All rights reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

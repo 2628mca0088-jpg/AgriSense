@@ -1,0 +1,850 @@
+/* =====================================================
+   AGRISENSE - MAIN STYLESHEET
+   Simple, beginner-friendly CSS.
+   Only flexbox is used for layout (no CSS grid).
+   Colors are kept in one place (below) so they are
+   easy to find and change.
+===================================================== */
+
+/* -----------------------------------------------------
+   1. COLORS (change these to re-theme the whole site)
+----------------------------------------------------- */
+:root {
+  --color-primary: #16a34a;       /* main green */
+  --color-primary-dark: #15803d;  /* darker green for hover */
+  --color-primary-light: #f0fdf4; /* very light green background */
+
+  --color-secondary: #f59e0b;     /* amber / orange accent */
+  --color-secondary-dark: #d97706;
+
+  --color-text-dark: #111827;     /* headings */
+  --color-text-gray: #4b5563;     /* normal paragraph text */
+  --color-text-light: #6b7280;    /* small / muted text */
+
+  --color-bg-white: #ffffff;
+  --color-bg-light: #f9fafb;
+  --color-border: #e5e7eb;
+
+  --color-footer-bg: #111827;
+  --color-footer-text: #9ca3af;
+}
+
+/* -----------------------------------------------------
+   2. RESET / BASE STYLES
+----------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-text-gray);
+  background-color: var(--color-bg-white);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-text-dark);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+h1 { font-size: 40px; }
+h2 { font-size: 32px; }
+h3 { font-size: 20px; }
+h4 { font-size: 18px; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* -----------------------------------------------------
+   3. LAYOUT HELPERS
+----------------------------------------------------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 60px 0;
+}
+
+.section-light {
+  background-color: var(--color-bg-light);
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-heading p {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 17px;
+}
+
+/* -----------------------------------------------------
+   4. BUTTONS
+----------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-bg-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary-light);
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-bg-white);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary-dark);
+}
+
+.btn-full-width {
+  width: 100%;
+  text-align: center;
+}
+
+/* -----------------------------------------------------
+   5. NAVBAR
+----------------------------------------------------- */
+.navbar {
+  background-color: var(--color-bg-white);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-logo-box {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-bg-white);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.navbar-logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text-dark);
+}
+
+.navbar-logo-text span {
+  color: var(--color-primary);
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-link {
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: var(--color-text-gray);
+  font-weight: 500;
+}
+
+.navbar-link:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+.navbar-link.active {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Hamburger button - hidden on desktop, shown on mobile.
+   This is a <label> for the hidden checkbox below, so it
+   works with pure CSS (no JavaScript needed). */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.navbar-toggle-bar {
+  width: 24px;
+  height: 3px;
+  background-color: var(--color-text-dark);
+  border-radius: 2px;
+}
+
+/* Hidden checkbox that remembers "menu open / closed".
+   Clicking the label above (.navbar-toggle) checks/unchecks it. */
+.navbar-toggle-checkbox {
+  display: none;
+}
+
+/* Mobile dropdown menu - hidden by default */
+.navbar-mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+/* When the hidden checkbox is checked, show the mobile menu.
+   This is pure CSS - no JavaScript involved. */
+.navbar-toggle-checkbox:checked ~ .navbar-mobile-menu-wrap .navbar-mobile-menu {
+  display: flex;
+}
+
+.navbar-mobile-link {
+  padding: 10px 16px;
+  border-radius: 8px;
+  color: var(--color-text-gray);
+  font-weight: 500;
+}
+
+.navbar-mobile-link:hover {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* -----------------------------------------------------
+   6. HERO SECTION (home page top banner)
+----------------------------------------------------- */
+.hero {
+  background-color: var(--color-primary-light);
+  padding: 70px 0;
+}
+
+.hero-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1 1 450px;
+}
+
+.hero-tag {
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.hero-title {
+  font-size: 44px;
+  margin-bottom: 20px;
+}
+
+.hero-text {
+  font-size: 17px;
+  margin-bottom: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  border-top: 1px solid var(--color-border);
+  padding-top: 24px;
+}
+
+.hero-stat-number {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.hero-stat-label {
+  font-size: 14px;
+  color: var(--color-text-light);
+}
+
+.hero-image-box {
+  flex: 1 1 400px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* The actual banner picture inside the hero box */
+.hero-image-box img {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* -----------------------------------------------------
+   7. FEATURES SECTION (feature cards)
+----------------------------------------------------- */
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.feature-card {
+  flex: 1 1 300px;
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.feature-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.feature-title {
+  margin-bottom: 8px;
+}
+
+/* -----------------------------------------------------
+   8. CROP CARD (used on home page and crop explorer)
+----------------------------------------------------- */
+.crops-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.crop-card {
+  flex: 1 1 280px;
+  max-width: 340px;
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.crop-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.crop-icon-box {
+  width: 48px;
+  height: 48px;
+  background-color: var(--color-primary-light);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.crop-name {
+  font-size: 17px;
+  margin-bottom: 2px;
+}
+
+.crop-season {
+  font-size: 13px;
+  color: var(--color-text-light);
+}
+
+.crop-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.crop-price-label {
+  font-size: 14px;
+}
+
+.crop-price-value {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* simple progress bar showing price change */
+.crop-progress-track {
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-border);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.crop-progress-fill {
+  height: 8px;
+  background-color: var(--color-primary);
+  border-radius: 8px;
+}
+
+.crop-trend-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.crop-trend-up {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.crop-trend-down {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.crop-extra-row {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-border);
+  padding-top: 14px;
+  margin-bottom: 16px;
+}
+
+.crop-extra-label {
+  font-size: 12px;
+  color: var(--color-text-light);
+}
+
+.crop-extra-value {
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+/* -----------------------------------------------------
+   9. CTA SECTION (call to action banner)
+----------------------------------------------------- */
+.cta-section {
+  background-color: var(--color-primary);
+  padding: 60px 0;
+  text-align: center;
+  color: var(--color-bg-white);
+}
+
+.cta-section h2 {
+  color: var(--color-bg-white);
+}
+
+.cta-section p {
+  color: #dcfce7;
+  max-width: 600px;
+  margin: 0 auto 24px auto;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.cta-buttons .btn-primary {
+  background-color: var(--color-bg-white);
+  color: var(--color-primary);
+}
+
+.cta-buttons .btn-primary:hover {
+  background-color: var(--color-primary-light);
+}
+
+.cta-buttons .btn-outline {
+  border-color: var(--color-bg-white);
+  color: var(--color-bg-white);
+}
+
+.cta-buttons .btn-outline:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* -----------------------------------------------------
+   10. TESTIMONIALS SECTION
+----------------------------------------------------- */
+.testimonials-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.testimonial-card {
+  flex: 1 1 300px;
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.testimonial-stars {
+  color: #facc15;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.testimonial-text {
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-primary-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-name {
+  font-weight: 600;
+  color: var(--color-text-dark);
+  font-size: 14px;
+}
+
+.testimonial-location {
+  font-size: 13px;
+  color: var(--color-text-light);
+}
+
+/* -----------------------------------------------------
+   11. FOOTER
+----------------------------------------------------- */
+.footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding: 50px 0 20px 0;
+  margin-top: 40px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.footer-column {
+  flex: 1 1 200px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.footer-brand-text {
+  color: var(--color-bg-white);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer-heading {
+  color: var(--color-bg-white);
+  font-size: 15px;
+  margin-bottom: 14px;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.footer-column ul li a:hover {
+  color: var(--color-primary);
+}
+
+.footer-bottom {
+  border-top: 1px solid #374151;
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+}
+
+/* -----------------------------------------------------
+   12. PAGE HEADER (used on Crop Explorer & Market Finder)
+----------------------------------------------------- */
+.page-header {
+  background-color: var(--color-primary-light);
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0;
+}
+
+.page-header p {
+  font-size: 17px;
+}
+
+/* Different banner picture for each page */
+.page-header-crops {
+  background-image: url("../images/banner-crops.jpg");
+}
+
+.page-header-markets {
+  background-image: url("../images/banner-markets.jpg");
+}
+
+/* -----------------------------------------------------
+   13. FILTER SIDEBAR + PAGE CONTENT LAYOUT
+----------------------------------------------------- */
+.page-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  padding: 50px 0;
+}
+
+.filter-sidebar {
+  flex: 1 1 260px;
+  max-width: 280px;
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 24px;
+  align-self: flex-start;
+}
+
+.filter-group {
+  border-top: 1px solid var(--color-border);
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.filter-group:first-child {
+  border-top: none;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.filter-title {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.search-input,
+.select-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--color-text-gray);
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.radio-option input {
+  width: 16px;
+  height: 16px;
+}
+
+.results-area {
+  flex: 3 1 600px;
+}
+
+.results-info-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.no-results {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.no-results p {
+  margin-bottom: 16px;
+  font-size: 17px;
+}
+
+/* -----------------------------------------------------
+   14. MARKET CARD (Market Finder page)
+----------------------------------------------------- */
+.market-card {
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.market-card-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.market-card-cell {
+  flex: 1 1 160px;
+}
+
+.market-detail-label {
+  font-size: 13px;
+  color: var(--color-text-light);
+  margin-bottom: 4px;
+}
+
+.market-detail-value {
+  font-weight: 600;
+  color: var(--color-text-dark);
+}
+
+.market-price-value {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* -----------------------------------------------------
+   15. MARKET INSIGHTS STATS (bottom of Market Finder page)
+----------------------------------------------------- */
+.insights-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.insight-card {
+  flex: 1 1 220px;
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.insight-label {
+  font-size: 13px;
+  color: var(--color-text-light);
+  margin-bottom: 6px;
+}
+
+.insight-number {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 6px;
+}
+
+.insight-sub {
+  font-size: 13px;
+}
+
+/* -----------------------------------------------------
+   16. RESPONSIVE - MOBILE STYLES
+----------------------------------------------------- */
+@media (max-width: 768px) {
+  .navbar-menu,
+  .navbar-actions {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  h1 { font-size: 30px; }
+  h2 { font-size: 26px; }
+
+  .hero-title {
+    font-size: 32px;
+  }
+}

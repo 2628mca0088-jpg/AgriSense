@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Finder - AgriSense</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <!-- Hidden checkbox that remembers if the mobile menu is open.
+         Pure CSS - no JavaScript involved. -->
+    <input type="checkbox" id="navToggle" class="navbar-toggle-checkbox">
+
+    <div class="container navbar-inner">
+
+      <a href="index.html" class="navbar-logo">
+        <div class="navbar-logo-box">A</div>
+        <span class="navbar-logo-text">Agri<span>Sense</span></span>
+      </a>
+
+      <nav class="navbar-menu">
+        <a href="index.html" class="navbar-link">Home</a>
+        <a href="crops.html" class="navbar-link">Crop Explorer</a>
+        <a href="markets.html" class="navbar-link active">Market Finder</a>
+        <a href="index.html" class="navbar-link">About</a>
+      </nav>
+
+      <div class="navbar-actions">
+        <button class="btn btn-primary">Get Started</button>
+      </div>
+
+      <!-- Clicking this label checks/unchecks #navToggle above -->
+      <label for="navToggle" class="navbar-toggle" aria-label="Toggle menu">
+        <span class="navbar-toggle-bar"></span>
+        <span class="navbar-toggle-bar"></span>
+        <span class="navbar-toggle-bar"></span>
+      </label>
+    </div>
+
+    <div class="navbar-mobile-menu-wrap">
+      <div class="container">
+        <nav class="navbar-mobile-menu">
+          <a href="index.html" class="navbar-mobile-link">Home</a>
+          <a href="crops.html" class="navbar-mobile-link">Crop Explorer</a>
+          <a href="markets.html" class="navbar-mobile-link">Market Finder</a>
+          <a href="index.html" class="navbar-mobile-link">About</a>
+          <button class="btn btn-primary btn-full-width">Get Started</button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ PAGE HEADER (with banner image) ============ -->
+  <section class="page-header page-header-markets">
+    <div class="container">
+      <h1>Market Finder</h1>
+      <p>Discover and compare agricultural markets across India</p>
+    </div>
+  </section>
+
+  <!-- ============ FILTERS + MARKETS LIST ============ -->
+  <!-- Note: this is a plain HTML/CSS page, so the dropdown filters
+       below are for visual layout only. Making them actually filter
+       the markets would need JavaScript, which this version does not use. -->
+  <section class="container page-content">
+
+    <aside class="filter-sidebar">
+
+      <div class="filter-group">
+        <h3 class="filter-title">Region</h3>
+        <select class="select-input">
+          <option>All Regions</option>
+          <option>North</option>
+          <option>South</option>
+          <option>East</option>
+          <option>West</option>
+          <option>Central</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <h3 class="filter-title">State</h3>
+        <select class="select-input">
+          <option>All States</option>
+          <option>Uttar Pradesh</option>
+          <option>Punjab</option>
+          <option>Haryana</option>
+          <option>Maharashtra</option>
+          <option>Rajasthan</option>
+          <option>Karnataka</option>
+          <option>Tamil Nadu</option>
+          <option>West Bengal</option>
+          <option>Delhi</option>
+          <option>Madhya Pradesh</option>
+        </select>
+      </div>
+
+    </aside>
+
+    <div class="results-area">
+
+      <div class="results-info-row">
+        <p>Found <strong>12</strong> markets</p>
+      </div>
+
+      <div>
+        <div class="market-card">
+          <div class="market-card-row">
+            <div class="market-card-cell">
+              <p class="market-detail-label">Market Name</p>
+              <h3 class="crop-name">Delhi Safal Market</h3>
+              <p class="crop-season">Delhi</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">State</p>
+              <p class="market-detail-value">Delhi</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Price Index</p>
+              <p class="market-price-value">₹2400/kg</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Volume</p>
+              <p class="market-detail-value">1200 MT</p>
+            </div>
+            <div class="market-card-cell">
+              <a href="#" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="market-card">
+          <div class="market-card-row">
+            <div class="market-card-cell">
+              <p class="market-detail-label">Market Name</p>
+              <h3 class="crop-name">Mandi Board Jaipur</h3>
+              <p class="crop-season">Jaipur</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">State</p>
+              <p class="market-detail-value">Rajasthan</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Price Index</p>
+              <p class="market-price-value">₹2100/kg</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Volume</p>
+              <p class="market-detail-value">980 MT</p>
+            </div>
+            <div class="market-card-cell">
+              <a href="#" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="market-card">
+          <div class="market-card-row">
+            <div class="market-card-cell">
+              <p class="market-detail-label">Market Name</p>
+              <h3 class="crop-name">Punjab Agricultural Market</h3>
+              <p class="crop-season">Ludhiana</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">State</p>
+              <p class="market-detail-value">Punjab</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Price Index</p>
+              <p class="market-price-value">₹2600/kg</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Volume</p>
+              <p class="market-detail-value">1500 MT</p>
+            </div>
+            <div class="market-card-cell">
+              <a href="#" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="market-card">
+          <div class="market-card-row">
+            <div class="market-card-cell">
+              <p class="market-detail-label">Market Name</p>
+              <h3 class="crop-name">Haryana Grain Market</h3>
+              <p class="crop-season">Karnal</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">State</p>
+              <p class="market-detail-value">Haryana</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Price Index</p>
+              <p class="market-price-value">₹2350/kg</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Volume</p>
+              <p class="market-detail-value">1100 MT</p>
+            </div>
+            <div class="market-card-cell">
+              <a href="#" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="market-card">
+          <div class="market-card-row">
+            <div class="market-card-cell">
+              <p class="market-detail-label">Market Name</p>
+              <h3 class="crop-name">Pune Wholesale Market</h3>
+              <p class="crop-season">Pune</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">State</p>
+              <p class="market-detail-value">Maharashtra</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Price Index</p>
+              <p class="market-price-value">₹2900/kg</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Volume</p>
+              <p class="market-detail-value">1700 MT</p>
+            </div>
+            <div class="market-card-cell">
+              <a href="#" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="market-card">
+          <div class="market-card-row">
+            <div class="market-card-cell">
+              <p class="market-detail-label">Market Name</p>
+              <h3 class="crop-name">Mumbai APMC Market</h3>
+              <p class="crop-season">Mumbai</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">State</p>
+              <p class="market-detail-value">Maharashtra</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Price Index</p>
+              <p class="market-price-value">₹3100/kg</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Volume</p>
+              <p class="market-detail-value">2100 MT</p>
+            </div>
+            <div class="market-card-cell">
+              <a href="#" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="market-card">
+          <div class="market-card-row">
+            <div class="market-card-cell">
+              <p class="market-detail-label">Market Name</p>
+              <h3 class="crop-name">Bangalore City Market</h3>
+              <p class="crop-season">Bangalore</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">State</p>
+              <p class="market-detail-value">Karnataka</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Price Index</p>
+              <p class="market-price-value">₹2700/kg</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Volume</p>
+              <p class="market-detail-value">1400 MT</p>
+            </div>
+            <div class="market-card-cell">
+              <a href="#" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="market-card">
+          <div class="market-card-row">
+            <div class="market-card-cell">
+              <p class="market-detail-label">Market Name</p>
+              <h3 class="crop-name">Chennai Koyambedu Market</h3>
+              <p class="crop-season">Chennai</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">State</p>
+              <p class="market-detail-value">Tamil Nadu</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Price Index</p>
+              <p class="market-price-value">₹2500/kg</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Volume</p>
+              <p class="market-detail-value">1600 MT</p>
+            </div>
+            <div class="market-card-cell">
+              <a href="#" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="market-card">
+          <div class="market-card-row">
+            <div class="market-card-cell">
+              <p class="market-detail-label">Market Name</p>
+              <h3 class="crop-name">Kolkata Wholesale Market</h3>
+              <p class="crop-season">Kolkata</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">State</p>
+              <p class="market-detail-value">West Bengal</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Price Index</p>
+              <p class="market-price-value">₹2200/kg</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Volume</p>
+              <p class="market-detail-value">1300 MT</p>
+            </div>
+            <div class="market-card-cell">
+              <a href="#" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="market-card">
+          <div class="market-card-row">
+            <div class="market-card-cell">
+              <p class="market-detail-label">Market Name</p>
+              <h3 class="crop-name">Bhopal Central Market</h3>
+              <p class="crop-season">Bhopal</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">State</p>
+              <p class="market-detail-value">Madhya Pradesh</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Price Index</p>
+              <p class="market-price-value">₹2450/kg</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Volume</p>
+              <p class="market-detail-value">1050 MT</p>
+            </div>
+            <div class="market-card-cell">
+              <a href="#" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="market-card">
+          <div class="market-card-row">
+            <div class="market-card-cell">
+              <p class="market-detail-label">Market Name</p>
+              <h3 class="crop-name">Lucknow Grain Mandi</h3>
+              <p class="crop-season">Lucknow</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">State</p>
+              <p class="market-detail-value">Uttar Pradesh</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Price Index</p>
+              <p class="market-price-value">₹2300/kg</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Volume</p>
+              <p class="market-detail-value">1250 MT</p>
+            </div>
+            <div class="market-card-cell">
+              <a href="#" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="market-card">
+          <div class="market-card-row">
+            <div class="market-card-cell">
+              <p class="market-detail-label">Market Name</p>
+              <h3 class="crop-name">Kanpur Agricultural Market</h3>
+              <p class="crop-season">Kanpur</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">State</p>
+              <p class="market-detail-value">Uttar Pradesh</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Price Index</p>
+              <p class="market-price-value">₹2150/kg</p>
+            </div>
+            <div class="market-card-cell">
+              <p class="market-detail-label">Volume</p>
+              <p class="market-detail-value">900 MT</p>
+            </div>
+            <div class="market-card-cell">
+              <a href="#" class="btn btn-primary">Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ============ MARKET INSIGHTS ============ -->
+  <section class="section section-light">
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom: 32px;">Market Insights</h2>
+
+      <div class="insights-list">
+        <div class="insight-card">
+          <p class="insight-label">Total Markets</p>
+          <p class="insight-number">2000+</p>
+          <p class="insight-sub">Across India</p>
+        </div>
+        <div class="insight-card">
+          <p class="insight-label">Daily Volume</p>
+          <p class="insight-number">50K+ MT</p>
+          <p class="insight-sub">Agricultural produce</p>
+        </div>
+        <div class="insight-card">
+          <p class="insight-label">Crops Tracked</p>
+          <p class="insight-number">500+</p>
+          <p class="insight-sub">Varieties covered</p>
+        </div>
+        <div class="insight-card">
+          <p class="insight-label">Live Prices</p>
+          <p class="insight-number">Updated</p>
+          <p class="insight-sub">Every 6 hours</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 AgriSense. MCA Project. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
